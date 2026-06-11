@@ -15,8 +15,8 @@ export const generateGeminiResponse = async (history, newMessage) => {
 
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // Default to gemini-1.5-flash or retrieve from env
-    const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+    // Default to gemini-2.0-flash or retrieve from env
+    const modelName = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
     const model = genAI.getGenerativeModel({ model: modelName });
 
     // Format history for Gemini chat API
@@ -54,7 +54,7 @@ export const generateChatTitle = async (firstMessage) => {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
     const prompt = `Generate a very short, concise title (max 4-5 words) for a conversation that starts with the following query. Do not use quotes or punctuation in the output: "${firstMessage}"`;
     const result = await model.generateContent(prompt);
