@@ -1,0 +1,16 @@
+{
+  "name": "ai-chat-application",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server-install": "npm install --prefix server",
+    "client-install": "npm install --prefix client",
+    "install-all": "npm run server-install && npm run client-install",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
